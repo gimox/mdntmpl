@@ -18,9 +18,9 @@ class Environment {
 
   Environment._internal();
 
-  static const String DEV = 'DEV';
-  static const String STAGING = 'STAGING';
-  static const String PROD = 'PROD';
+  static const String dev = 'dev';
+  static const String staging = 'staging';
+  static const String prod = 'prod';
 
   late BaseConfig config;
 
@@ -30,9 +30,9 @@ class Environment {
 
   BaseConfig _getConfig(String environment) {
     switch (environment) {
-      case Environment.PROD:
+      case Environment.dev:
         return ProdConfig();
-      case Environment.STAGING:
+      case Environment.staging:
         return StagingConfig();
       default:
         return DevConfig();

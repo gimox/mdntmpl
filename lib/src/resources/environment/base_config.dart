@@ -11,9 +11,9 @@
  * final bool useHttps = Environment().config.useHttps;
  *
  * start with Environment:
- * flutter run --dart-define=ENVIRONMENT=STAGING
+ * flutter run --dart-define=ENVIRONMENT=staging
  *
- * Default environment is DEV
+ * Default environment is dev
  */
 
 abstract class BaseConfig {

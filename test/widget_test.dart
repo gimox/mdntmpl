@@ -7,13 +7,23 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:mdntmpl/main.dart';
+import 'package:mdntmpl/src/app.dart';
+import 'package:mdntmpl/src/resources/environment/environment.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+
+    // add environment configuration for APP
+    const String environment = String.fromEnvironment(
+      'ENVIRONMENT',
+      defaultValue: Environment.dev,
+    );
+
+    Environment().initConfig(environment);
+
+
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const App());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
